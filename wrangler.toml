@@ -1,0 +1,15 @@
+name = "cxtn"
+compatibility_date = "2026-09-21"
+main = ".svelte-kit/cloudflare/_worker.js"
+workers_dev = false
+
+[assets]
+binding = "ASSETS"
+directory = ".svelte-kit/cloudflare"
+
+[observability]
+enabled = true
+
+[[routes]]
+pattern = "cxtn.bate.dev"
+custom_domain = true
