@@ -1,3 +1,161 @@
+---
+lockfileVersion: '9.0'
+
+importers:
+
+  .:
+    configDependencies: {}
+    packageManagerDependencies:
+      pnpm:
+        specifier: 12.4.1
+        version: 12.4.1
+
+packages:
+
+  '@pnpm/exe.android-arm64@12.4.1':
+    resolution: {integrity: sha512-/HwsqXMSmlOfgtV9+O0ratzjV6Vd/8n1hh4rGHpCGmDURvt52MwZxdbhyxP4K03ZfvgSDvotFPr8O+RzE5Eu8A==}
+    cpu: [arm64]
+    os: [android]
+
+  '@pnpm/exe.android-x64@12.4.1':
+    resolution: {integrity: sha512-+l74Qb4c2YjOzNKHXJLg+1wr8xHM1ckkUhnU5KRUK9TJqiiczt6yeTZqqzHIlJ8i6pAoj5V0OJevDRwnQKLgrQ==}
+    cpu: [x64]
+    os: [android]
+
+  '@pnpm/exe.darwin-arm64@12.4.1':
+    resolution: {integrity: sha512-6rkZkT3iGfaxknUdGHraqSWFvTa6N0ajAHluv9Ax0GRWs0sIcGNiFhDopv6xSZCsJZmG483aNS/b6UEDy3blfw==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@pnpm/exe.darwin-x64@12.4.1':
+    resolution: {integrity: sha512-Vb1CHlR88HghC1qUxjxjs82zQSXnXacPD+btG2CmG8Q/hBU7Q0/b2YWJKSQqZXicunV5khFtfTlAwJddV9RkYA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@pnpm/exe.freebsd-x64@12.4.1':
+    resolution: {integrity: sha512-iT3iHz3Nl0Sxxj7UPOtZ/aQ81AFsQhjoeWMAlPkSRO04gsgDGAXv3UYxOFaesMWsfNxaGn0A+CITbuCHFF66FA==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@pnpm/exe.linux-arm64-musl@12.4.1':
+    resolution: {integrity: sha512-aBooZfNXM5f+OGUgCAMFWpE/kAhsWfvmqIyMtHy6zl3aNxyInWrcY/Saln/UElzo7lZWMC0Yktroxd/2J26lNQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-arm64@12.4.1':
+    resolution: {integrity: sha512-TlOdacTTP09BgcMvwWBFRsu8VAjfwqwnslBj+XSq1JFM3ck4f3k+1O/747EuctxZxs3/o785b6Q3s7Pd92Ptsg==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-ppc64@12.4.1':
+    resolution: {integrity: sha512-r/ab/MlIBo75oizUP5ITiziCCrnXz4SJwfErLQ+603AshB+Yq7xTMCoMtzTSCAMu6aaymIKkAFtZvd2J75Wq0w==}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-riscv64@12.4.1':
+    resolution: {integrity: sha512-C/D1QWdKMiB8+wv/spl1rGITFUuqC+aI/fb6h8NB5sqxsOaGXeYc/g891oCuzggHn6SODk9p+I09hI76x/cMNw==}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-s390x@12.4.1':
+    resolution: {integrity: sha512-nxz5zD4yXt94uzbStDk0QTPKW+aE92hH1b5tFXK9ctB1HE9Xcq1vjTiA2LsZMFC6p4gdu5OwQeFqYNAVGa6QlA==}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-x64-musl@12.4.1':
+    resolution: {integrity: sha512-5AwgFdGhVUg2kIweYGfxzSLEHiIG77PQhZAkXC3TwofQHsu1Wr+TrV5/rNX2PopFnHRzuE581zoB8F6Wle32yg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-x64@12.4.1':
+    resolution: {integrity: sha512-FJOZuuuQMhp0oLzBtcKkLXknBI92hfkmSnlKc47vfin4HrmfID5khY2lGekL9tCzk1cpR+HShEw/meFl+nHtzQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.win32-arm64@12.4.1':
+    resolution: {integrity: sha512-OO7eKBL9S+xk5hRy+JUUZSNJknGuGe3GEUffsrlC2LbqKF02g+VX1anGIzSbJDvkkdnpJhSlxF5AUz2JzJu2Jw==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@pnpm/exe.win32-x64@12.4.1':
+    resolution: {integrity: sha512-x7gJHZgHo6hp354xCYA2NvoFzYJkHwovt2kVsUBK5EmXULLcP51JGMq09CX+5FRFJUZFKoXjLu3mZWmfP7o6PQ==}
+    cpu: [x64]
+    os: [win32]
+
+  pnpm@12.4.1:
+    resolution: {integrity: sha512-LoHjmdc/6DkNqyXgaqeIq3pZCCSNL1o3D4K0gRR6ano2e/gEj5pv22Rg8hpm8FQt7bi5TKLIcjWWdBkgsWVtTA==}
+    engines: {node: '>=18.*'}
+    hasBin: true
+
+snapshots:
+
+  '@pnpm/exe.android-arm64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.android-x64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.darwin-arm64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.darwin-x64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.freebsd-x64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-arm64-musl@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-arm64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-ppc64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-riscv64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-s390x@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-x64-musl@12.4.1':
+    optional: true
+
+  '@pnpm/exe.linux-x64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.win32-arm64@12.4.1':
+    optional: true
+
+  '@pnpm/exe.win32-x64@12.4.1':
+    optional: true
+
+  pnpm@12.4.1:
+    optionalDependencies:
+      '@pnpm/exe.android-arm64': 12.4.1
+      '@pnpm/exe.android-x64': 12.4.1
+      '@pnpm/exe.darwin-arm64': 12.4.1
+      '@pnpm/exe.darwin-x64': 12.4.1
+      '@pnpm/exe.freebsd-x64': 12.4.1
+      '@pnpm/exe.linux-arm64': 12.4.1
+      '@pnpm/exe.linux-arm64-musl': 12.4.1
+      '@pnpm/exe.linux-ppc64': 12.4.1
+      '@pnpm/exe.linux-riscv64': 12.4.1
+      '@pnpm/exe.linux-s390x': 12.4.1
+      '@pnpm/exe.linux-x64': 12.4.1
+      '@pnpm/exe.linux-x64-musl': 12.4.1
+      '@pnpm/exe.win32-arm64': 12.4.1
+      '@pnpm/exe.win32-x64': 12.4.1
+
+---
 lockfileVersion: '9.0'
 
 settings:
@@ -15,8 +173,8 @@ importers:
         specifier: ^8.0.0-next.3
         version: 8.0.0-next.4(@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))
       '@sveltejs/adapter-cloudflare':
-        specifier: ^7.2.9
-        version: 7.2.9(@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(wrangler@4.135.0(@types/node@24.13.6))
+        specifier: ^8.0.0-next.7
+        version: 8.0.0-next.7(@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(wrangler@4.135.0(@cloudflare/workers-types@5.20260920.1)(@types/node@24.13.6))
       '@sveltejs/kit':
         specifier: ^3.0.0-next.0
         version: 3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0))
@@ -82,7 +240,7 @@ importers:
         version: 2.2.1(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vitest@4.1.11)
       wrangler:
         specifier: ^4.135.0
-        version: 4.135.0(@types/node@24.13.6)
+        version: 4.135.0(@cloudflare/workers-types@5.20260920.1)(@types/node@24.13.6)
 
 packages:
 
@@ -138,8 +296,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20260702.1':
-    resolution: {integrity: sha512-mOhf5TUEB1m2vPrxtqoIGfz0fUC9xyxRDx5gWHy5s+OCo6dcV+g7wI1R7gYCMFohhqF/2y2xeKVwMwCJjfn/WA==}
+  '@cloudflare/workers-types@5.20260920.1':
+    resolution: {integrity: sha512-wP7wbKqfQjFRGhE/tvu7bwvmBBTqJjvrETTvNzF4u5oolVEXt0gy6JxbqcUC2Khz0Cy+M/q7rhOOODng8VpnPw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -687,11 +845,11 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^3.0.0-next.0
 
-  '@sveltejs/adapter-cloudflare@7.2.9':
-    resolution: {integrity: sha512-LEfLRYKZIiNYBPYk9Cu4dFCCIX37NO96jESNRDv7yr3vvblKU4Yh05FPUMRSrOWFKtG6bJcGIvdG/M2DSf4D1w==}
+  '@sveltejs/adapter-cloudflare@8.0.0-next.7':
+    resolution: {integrity: sha512-LZxggjQNLGmmnLZ7uQna6G03KVM1t2WeWer6CSxIwPw8zEMhL/DYjbbX7u3m8dEa4eJM3e/vrkv8F+45H9qhMw==}
     peerDependencies:
-      '@sveltejs/kit': ^2.0.0
-      wrangler: ^4.0.0
+      '@sveltejs/kit': ^3.0.0-next.0
+      wrangler: ^4.118.0
 
   '@sveltejs/kit@3.0.0-next.27':
     resolution: {integrity: sha512-m2R6GvcMhiAbYVKhzRf5mzLSvcXEuy/H0Va72XvxfEl1ZglrSC/321GKYa6idDHPojuRzkyh9EB0jBZmAwf6+Q==}
@@ -1607,10 +1765,6 @@ packages:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
 
-  regexparam@3.0.0:
-    resolution: {integrity: sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==}
-    engines: {node: '>=8'}
-
   rolldown@1.2.9:
     resolution: {integrity: sha512-hx/Pv0N1haXRb11qkfnK5MXB/iqr7i0yjWQqmO9uHqZpBgQSqzc8UsSnEpalsh+j1I8qQ2CkXAkJC8Br3dKSlg==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1868,10 +2022,6 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  worktop@0.8.0-next.18:
-    resolution: {integrity: sha512-+TvsA6VAVoMC3XDKR5MoC/qlLqDixEfOBysDEKnPIPou/NvoPWCAuXHXMsswwlvmEuvX56lQjvELLyLuzTKvRw==}
-    engines: {node: '>=12'}
-
   wrangler@4.135.0:
     resolution: {integrity: sha512-WrNBQSfIG6YcILJcodYr5ty8vgkzGsV8YX+kfd+uZ5/Bd8cUW0GnUIRKAVfn5kYKqh1m/BPcji9h1d7mE8euFw==}
     engines: {node: '>=22.0.0'}
@@ -1962,7 +2112,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20260918.1':
     optional: true
 
-  '@cloudflare/workers-types@4.20260702.1': {}
+  '@cloudflare/workers-types@5.20260920.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -2316,12 +2466,12 @@ snapshots:
     dependencies:
       '@sveltejs/kit': 3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0))
 
-  '@sveltejs/adapter-cloudflare@7.2.9(@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(wrangler@4.135.0(@types/node@24.13.6))':
+  '@sveltejs/adapter-cloudflare@8.0.0-next.7(@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(wrangler@4.135.0(@cloudflare/workers-types@5.20260920.1)(@types/node@24.13.6))':
     dependencies:
-      '@cloudflare/workers-types': 4.20260702.1
+      '@cloudflare/workers-types': 5.20260920.1
+      '@rolldown/pluginutils': 1.0.1
       '@sveltejs/kit': 3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0))
-      worktop: 0.8.0-next.18
-      wrangler: 4.135.0(@types/node@24.13.6)
+      wrangler: 4.135.0(@cloudflare/workers-types@5.20260920.1)(@types/node@24.13.6)
 
   '@sveltejs/kit@3.0.0-next.27(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.1(@typescript-eslint/types@8.70.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.1(@typescript-eslint/types@8.70.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.7.0))':
     dependencies:
@@ -3141,8 +3291,6 @@ snapshots:
 
   readdirp@4.1.2: {}
 
-  regexparam@3.0.0: {}
-
   rolldown@1.2.9:
     dependencies:
       '@oxc-project/types': 0.150.0
@@ -3395,12 +3543,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20260918.1
       '@cloudflare/workerd-windows-64': 1.20260918.1
 
-  worktop@0.8.0-next.18:
-    dependencies:
-      mrmime: 2.0.1
-      regexparam: 3.0.0
-
-  wrangler@4.135.0(@types/node@24.13.6):
+  wrangler@4.135.0(@cloudflare/workers-types@5.20260920.1)(@types/node@24.13.6):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260918.1)
@@ -3411,6 +3554,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20260918.1
     optionalDependencies:
+      '@cloudflare/workers-types': 5.20260920.1
       fsevents: 2.3.3
     transitivePeerDependencies:
       - '@types/node'
