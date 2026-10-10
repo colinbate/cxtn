@@ -199,13 +199,23 @@
 				<div
 					class="mt-5 flex flex-col-reverse items-center justify-between gap-3 rounded-2xl border border-[#d7d2c8] bg-white p-2.5 shadow-sm sm:flex-row"
 				>
-					<button
-						type="button"
-						onclick={shuffleTiles}
-						class="w-full rounded-full border border-[#c6c1b7] bg-white px-4 py-2.5 text-sm font-semibold hover:border-[#24221e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] sm:w-auto"
-					>
-						Shuffle
-					</button>
+					<div class="flex w-full flex-wrap gap-2 sm:w-auto">
+						<button
+							type="button"
+							onclick={shuffleTiles}
+							class="flex-1 rounded-full border border-[#c6c1b7] bg-white px-4 py-2.5 text-sm font-semibold hover:border-[#24221e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] sm:flex-none"
+						>
+							Shuffle
+						</button>
+						<button
+							type="button"
+							onclick={() => (selectedIds = [])}
+							disabled={selectedCount === 0}
+							class="flex-1 rounded-full border border-[#c6c1b7] bg-white px-4 py-2.5 text-sm font-semibold hover:border-[#24221e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
+						>
+							Deselect all
+						</button>
+					</div>
 					<ColorPicker disabled={selectedCount !== 4} onselect={saveGroup} />
 				</div>
 			{/if}
