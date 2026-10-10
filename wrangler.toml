@@ -13,3 +13,7 @@ enabled = true
 [[routes]]
 pattern = "cxtn.bate.dev"
 custom_domain = true
+
+[[kv_namespaces]]
+binding = "KV"
+id = "333305bcdf4847078ea3bf4bb4d6453a"

@@ -3,12 +3,17 @@
 	import GroupCard from '#lib/components/GroupCard.svelte';
 	import WordTile from '#lib/components/WordTile.svelte';
 	import type { Group, GroupColor, Tile } from '#lib/connection-types.js';
+	import { localPuzzleDate } from '#lib/puzzle-date.js';
+	import { resolve } from '$app/paths';
 
 	let entryText = $state('');
 	let tiles = $state<Tile[]>([]);
 	let selectedIds = $state<number[]>([]);
 	let groups = $state<Group[]>([]);
 	let nextGroupId = $state(1);
+	let loadingToday = $state(false);
+	let loadError = $state('');
+	let loadStatus = $state('');
 
 	let parsedEntries = $derived(
 		entryText
@@ -18,6 +23,42 @@
 	);
 	let selectedCount = $derived(selectedIds.length);
 	let hasBoard = $derived(tiles.length > 0 || groups.length > 0);
+
+	async function loadTodayWords() {
+		if (loadingToday) return;
+		loadingToday = true;
+		loadError = '';
+		loadStatus = '';
+		// Read the browser's local calendar date at the time of the click, not UTC.
+		const date = localPuzzleDate();
+		try {
+			const response = await fetch(resolve('/api/connections/[date]', { date }), {
+				headers: { Accept: 'application/json' },
+				signal: AbortSignal.timeout(15_000)
+			});
+			const result = await response.json();
+			if (!response.ok) {
+				loadError =
+					typeof result.message === 'string'
+						? result.message
+						: 'Could not load today’s words. Please try again.';
+				return;
+			}
+			if (
+				!Array.isArray(result.words) ||
+				result.words.length !== 16 ||
+				!result.words.every((word: unknown) => typeof word === 'string' && word.trim())
+			) {
+				throw new Error('Could not load today’s words. Please try again.');
+			}
+			entryText = result.words.join('\n');
+			loadStatus = `Loaded the words for ${date}.`;
+		} catch {
+			loadError = 'Could not load today’s words. Please try again.';
+		} finally {
+			loadingToday = false;
+		}
+	}
 
 	function createBoard() {
 		if (parsedEntries.length !== 16) return;
@@ -89,21 +130,36 @@
 			<div class="mx-auto max-w-2xl pt-[10vh]">
 				<textarea
 					bind:value={entryText}
+					disabled={loadingToday}
 					rows="10"
 					aria-label="Puzzle words"
 					placeholder="Paste exactly 16 words or short phrases, separated by commas or new lines"
 					class="block w-full resize-none rounded-xl border border-[#c9c4b9] bg-white p-4 text-base leading-7 outline-none placeholder:text-[#aaa59b] focus:border-[#292722] focus:ring-1 focus:ring-[#292722]"
 				></textarea>
-				<div class="mt-3 flex justify-end">
+				<div class="mt-3 flex flex-wrap justify-between gap-3">
+					<button
+						type="button"
+						onclick={loadTodayWords}
+						disabled={loadingToday}
+						class="rounded-full border border-[#c6c1b7] bg-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:border-[#24221e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] disabled:cursor-wait disabled:opacity-60"
+					>
+						{loadingToday ? 'Loading…' : 'Load today’s words'}
+					</button>
 					<button
 						type="button"
 						onclick={createBoard}
-						disabled={parsedEntries.length !== 16}
+						disabled={loadingToday || parsedEntries.length !== 16}
 						class="rounded-full bg-[#24221e] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#3b3933] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] disabled:cursor-not-allowed disabled:bg-[#c7c3ba]"
 					>
 						Create board
 					</button>
 				</div>
+				<p class="mt-3 text-sm text-[#625e55]" role="status">
+					{loadingToday ? 'Loading today’s puzzle…' : loadStatus}
+				</p>
+				{#if loadError}
+					<p class="mt-3 text-sm text-[#a52b24]" role="alert">{loadError}</p>
+				{/if}
 			</div>
 		{:else}
 			<div class="mb-5 flex justify-end pt-1">
