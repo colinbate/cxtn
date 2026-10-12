@@ -182,6 +182,9 @@
 				{/each}
 
 				{#if tiles.length > 0}
+					<p class="text-center text-xs leading-5 text-[#625e55]">
+						Look up a meaning: tap the search icon, press and hold a word, or Shift-click it.
+					</p>
 					<div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
 						{#each tiles as tile (tile.id)}
 							<WordTile
