@@ -164,16 +164,22 @@
 </svelte:head>
 
 <main class="min-h-screen bg-[#f7f5f0] px-4 py-8 text-[#211f1b] sm:px-6 sm:py-10">
+    <header class="font-title text-6xl mx-auto w-full max-w-4xl flex gap-4 justify-center">
+        <div class="bg-cxtn-purple size-20 rounded-xl grid place-content-center">C</div>
+        <div class="bg-cxtn-blue size-20 rounded-xl grid place-content-center">X</div>
+        <div class="bg-cxtn-green size-20 rounded-xl grid place-content-center">T</div>
+        <div class="bg-cxtn-yellow size-20 rounded-xl grid place-content-center">N</div>
+    </header>
 	<div class="mx-auto w-full max-w-4xl">
 		{#if storageError}
-			<p class="mb-4 text-sm text-[#a52b24]" role="status">
+			<p class="mb-4 text-sm text-rose-500 pt-[3vh]" role="status">
 				Your browser couldn’t save your progress. Keep this page open to avoid losing it.
 			</p>
 		{/if}
 		{#if !storageReady}
-			<p class="pt-[10vh] text-center text-sm text-[#625e55]" role="status">Restoring board…</p>
+			<p class="pt-[3vh] text-center text-sm text-[#625e55]" role="status">Restoring board…</p>
 		{:else if !hasBoard}
-			<div class="mx-auto max-w-2xl pt-[10vh]">
+			<div class="mx-auto max-w-2xl pt-[3vh]">
 				<textarea
 					bind:value={() => entryText, updateEntryText}
 					disabled={loadingToday}
@@ -204,7 +210,7 @@
 					{loadingToday ? 'Loading today’s puzzle…' : loadStatus}
 				</p>
 				{#if loadError}
-					<p class="mt-3 text-sm text-[#a52b24]" role="alert">{loadError}</p>
+					<p class="mt-3 text-sm text-red-500" role="alert">{loadError}</p>
 				{/if}
 			</div>
 		{:else}

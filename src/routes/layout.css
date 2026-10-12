@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+@theme {
+    --font-title: Bungee, display;
+    --color-cxtn-yellow: #f2d458;
+    --color-cxtn-green: #9fcf86;
+    --color-cxtn-blue: #9fc4e7;
+    --color-cxtn-purple: #b4a1cf;
+    --color-cxtn-gray: #d6d3cc;
+}
+
 @layer base {
 	:root {
 		font-family:

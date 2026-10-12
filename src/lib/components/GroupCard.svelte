@@ -13,11 +13,11 @@
 	} = $props();
 
 	const colors: Record<GroupColor, string> = {
-		yellow: 'bg-[#f2d458]',
-		green: 'bg-[#9fcf86]',
-		blue: 'bg-[#9fc4e7]',
-		purple: 'bg-[#b4a1cf]',
-		gray: 'bg-[#d6d3cc]'
+		yellow: 'bg-cxtn-yellow',
+		green: 'bg-cxtn-green',
+		blue: 'bg-cxtn-blue',
+		purple: 'bg-cxtn-purple',
+		gray: 'bg-cxtn-gray'
 	};
 	let color = $derived(colors[group.color]);
 </script>

@@ -14,11 +14,11 @@
 	} = $props();
 
 	const choices: { value: GroupColor; label: string; classes: string }[] = [
-		{ value: 'yellow', label: 'Yellow', classes: 'bg-[#f2d458]' },
-		{ value: 'green', label: 'Green', classes: 'bg-[#9fcf86]' },
-		{ value: 'blue', label: 'Blue', classes: 'bg-[#9fc4e7]' },
-		{ value: 'purple', label: 'Purple', classes: 'bg-[#b4a1cf]' },
-		{ value: 'gray', label: 'Unknown', classes: 'bg-[#d6d3cc]' }
+		{ value: 'yellow', label: 'Yellow', classes: 'bg-cxtn-yellow' },
+		{ value: 'green', label: 'Green', classes: 'bg-cxtn-green' },
+		{ value: 'blue', label: 'Blue', classes: 'bg-cxtn-blue' },
+		{ value: 'purple', label: 'Purple', classes: 'bg-cxtn-purple' },
+		{ value: 'gray', label: 'Unknown', classes: 'bg-cxtn-gray' }
 	];
 </script>
 
