@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import ColorPicker from '#lib/components/ColorPicker.svelte';
 	import GroupCard from '#lib/components/GroupCard.svelte';
 	import WordTile from '#lib/components/WordTile.svelte';
 	import type { Group, GroupColor, Tile } from '#lib/connection-types.js';
 	import { localPuzzleDate } from '#lib/puzzle-date.js';
+	import { loadSavedBoard, saveBoard } from '#lib/board-storage.js';
 	import { resolve } from '$app/paths';
 
 	let entryText = $state('');
@@ -14,6 +16,29 @@
 	let loadingToday = $state(false);
 	let loadError = $state('');
 	let loadStatus = $state('');
+	let storageReady = $state(false);
+	let storageError = $state(false);
+
+	onMount(() => {
+		const saved = loadSavedBoard();
+		if (saved) {
+			entryText = saved.entryText;
+			tiles = saved.tiles;
+			selectedIds = saved.selectedIds;
+			groups = saved.groups;
+			nextGroupId = saved.nextGroupId;
+		}
+		storageReady = true;
+	});
+
+	function persistBoard() {
+		storageError = !saveBoard({ entryText, tiles, selectedIds, groups, nextGroupId });
+	}
+
+	function updateEntryText(value: string) {
+		entryText = value;
+		persistBoard();
+	}
 
 	let parsedEntries = $derived(
 		entryText
@@ -51,7 +76,7 @@
 			) {
 				throw new Error('Could not load today’s words. Please try again.');
 			}
-			entryText = result.words.join('\n');
+			updateEntryText(result.words.join('\n'));
 			loadStatus = `Loaded the words for ${date}.`;
 		} catch {
 			loadError = 'Could not load today’s words. Please try again.';
@@ -66,14 +91,17 @@
 		selectedIds = [];
 		groups = [];
 		nextGroupId = 1;
+		persistBoard();
 	}
 
 	function toggleTile(id: number) {
 		if (selectedIds.includes(id)) {
 			selectedIds = selectedIds.filter((selectedId) => selectedId !== id);
+			persistBoard();
 			return;
 		}
 		if (selectedIds.length < 4) selectedIds = [...selectedIds, id];
+		persistBoard();
 	}
 
 	function saveGroup(color: GroupColor) {
@@ -89,10 +117,12 @@
 		tiles = tiles.filter((tile) => !selectedIds.includes(tile.id));
 		selectedIds = [];
 		nextGroupId += 1;
+		persistBoard();
 	}
 
 	function changeGroupColor(groupId: number, color: GroupColor) {
 		groups = groups.map((group) => (group.id === groupId ? { ...group, color } : group));
+		persistBoard();
 	}
 
 	function restoreGroup(groupId: number) {
@@ -101,6 +131,7 @@
 		tiles = [...group.tiles, ...tiles];
 		groups = groups.filter((candidate) => candidate.id !== groupId);
 		selectedIds = [];
+		persistBoard();
 	}
 
 	function shuffleTiles() {
@@ -110,12 +141,20 @@
 			[shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
 		}
 		tiles = shuffled;
+		persistBoard();
+	}
+
+	function deselectAll() {
+		selectedIds = [];
+		persistBoard();
 	}
 
 	function startOver() {
 		tiles = [];
 		groups = [];
 		selectedIds = [];
+		nextGroupId = 1;
+		persistBoard();
 	}
 </script>
 
@@ -126,10 +165,17 @@
 
 <main class="min-h-screen bg-[#f7f5f0] px-4 py-8 text-[#211f1b] sm:px-6 sm:py-10">
 	<div class="mx-auto w-full max-w-4xl">
-		{#if !hasBoard}
+		{#if storageError}
+			<p class="mb-4 text-sm text-[#a52b24]" role="status">
+				Your browser couldn’t save your progress. Keep this page open to avoid losing it.
+			</p>
+		{/if}
+		{#if !storageReady}
+			<p class="pt-[10vh] text-center text-sm text-[#625e55]" role="status">Restoring board…</p>
+		{:else if !hasBoard}
 			<div class="mx-auto max-w-2xl pt-[10vh]">
 				<textarea
-					bind:value={entryText}
+					bind:value={() => entryText, updateEntryText}
 					disabled={loadingToday}
 					rows="10"
 					aria-label="Puzzle words"
@@ -212,7 +258,7 @@
 						</button>
 						<button
 							type="button"
-							onclick={() => (selectedIds = [])}
+							onclick={deselectAll}
 							disabled={selectedCount === 0}
 							class="flex-1 rounded-full border border-[#c6c1b7] bg-white px-4 py-2.5 text-sm font-semibold hover:border-[#24221e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24221e] disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
 						>
